@@ -1,0 +1,62 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-balanced">
+            <!--<ion-nav-back-button></ion-nav-back-button>-->
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button button-clear">
+                    <div style="margin-top:8px;-ms-transform: scale(0.6, 0.6); -webkit-transform: scale(0.6, 0.6); transform:scale(0.6, 0.6);">
+                        <rotate class="compass" degrees="ionNavigationIconRotate"
+                                style="height:30px; width:30px; float: left; ">
+                            <i class="icon ion-navigate"></i></rotate>
+                    </div>
+                </button>
+                <button class="button button-clear button-disabled" style="min-width: 60px;">{{ gpsFix }}</button>
+                <button class="button button-clear button-disabled" >{{ isOnline }}</button>
+
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="app"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="app">
+        <ion-header-bar class="bar-balanced">
+            <div class="title">Menu</div>
+        </ion-header-bar>
+        <ion-content padding="false" class="side-menu-left has-header">
+            <ion-list id="menu-list1" class=" ">
+                <ion-item class="item-icon-right" id="menu-list-item1" ui-sref="menu.dashboard" menu-close="">
+                    Dashboard
+                    <i class="icon ion-home"></i>
+                </ion-item>
+                <ion-item class="item-icon-right" id="menu-list-item2" ui-sref="menu.collect" menu-close="">Collect
+                    <i class="icon ion-location"></i>
+                </ion-item>
+                <ion-item class="item-icon-right" id="menu-list-item3" ui-sref="menu.data" menu-close="">Data
+                    <i class="icon ion-folder"></i>
+                </ion-item>
+                <ion-item class="item-icon-right" id="menu-list-item6" ui-sref="menu.settings" menu-close="">Settings
+                    <i class="icon ion-gear-b"></i>
+                </ion-item>
+                <!--<ion-item class="item-icon-right  " id="menu-list-item6" ui-sref="menu.status" menu-close="">Status-->
+                <!--<i class="icon ion-gear-b"></i>-->
+                <!--</ion-item>-->
+                <ion-item class="item-icon-right" id="menu-list-item4" ui-sref="menu.help" menu-close="">Help
+                    <i class="icon ion-help-circled"></i>
+                </ion-item>
+                <ion-item class="item-icon-right" id="menu-list-item5" ui-sref="menu.privacy" menu-close="">Privacy
+                    <i class="icon ion-locked"></i>
+                </ion-item>
+                <ion-item class="item-icon-right" id="menu-list-item7" ui-sref="menu.login" menu-close=""
+                          ng-show="!isLoggedIn()">Login
+                    <i class="icon ion-person"></i>
+                </ion-item>
+                <ion-item class="item-icon-right" id="menu-list-item8" ui-sref="menu.logout" menu-close=""
+                          ng-show="isLoggedIn()">Logout
+                    <i class="icon ion-person"></i>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

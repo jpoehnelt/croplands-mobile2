@@ -1,0 +1,50 @@
+<ion-view title="Status">
+    <ion-content class="has-header">
+        <ul class="list">
+            <div class="item item-divider">
+                Permissions
+            </div>
+            <div class="item item-icon-right">
+                Location
+                <span class="item-note">
+                  {{ status.location }}
+                </span>
+            </div>
+            <div class="item item-icon-right">
+                Camera
+                <span class="item-note">
+                  {{ status.camera }}
+                </span>
+            </div>
+            <div class="item item-divider">
+                Functionality
+            </div>
+            <div class="item item-icon-right">
+                Database
+                <span class="item-note">
+                  {{ status.db }}
+                </span>
+            </div>
+            <div class="item item-icon-right">
+                Compass
+                <span class="item-note">
+                  {{ status.compass }}
+                </span>
+            </div>
+            <div class="item item-icon-right">
+                Application
+                <span class="item-note">
+                  {{ status.application }}
+                </span>
+            </div>
+        </ul>
+
+        <div class="row">
+            <div class="col">
+                <h5>This application requires specific permissions to function. Please change these settings within your
+                    device.</h5>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

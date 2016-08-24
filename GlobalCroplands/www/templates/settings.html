@@ -1,0 +1,42 @@
+<ion-view title="Settings">
+    <ion-content class="has-header">
+        <ul class="list">
+            <li class="item item-toggle">
+                Use Cell Network
+                <label class="toggle toggle-balanced">
+                    <input type="checkbox" ng-model="settings.NETWORK_DATA"
+                           ng-change="changeToSettings('NETWORK_DATA')">
+
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                Backup Photos to Album
+                <label class="toggle toggle-balanced">
+                    <input type="checkbox" ng-model="settings.SAVE_TO_PHOTO_ALBUM"
+                           ng-change="changeToSettings('SAVE_TO_PHOTO_ALBUM')">
+
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <div class="item">
+                GPS Accuracy Threshold: {{ settings.MAXIMUM_ACCURACY | number }} meters
+                <div class="range range-balanced">
+                    <input type="range" min="5" max="30" step="1" ng-model="settings.MAXIMUM_ACCURACY"
+                           ng-change="changeToSettings('MAXIMUM_ACCURACY', true)">
+                </div>
+            </div>
+            <div class="item">
+                GPS Minimum Number of Points: {{ settings.MINIMUM_LOCATIONS | number }}
+                <div class="range range-balanced">
+                    <input type="range" min="5" max="100" step="5" ng-model="settings.MINIMUM_LOCATIONS"
+                           ng-change="changeToSettings('MINIMUM_LOCATIONS', true)">
+                </div>
+            </div>
+        </ul>
+    </ion-content>
+</ion-view>

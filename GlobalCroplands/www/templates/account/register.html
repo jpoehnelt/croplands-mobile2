@@ -1,0 +1,80 @@
+<ion-view view-title="Register" hide-back-button="true">
+    <ion-content>
+        <form name="registrationForm">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">First</span>
+                    <input id="first" name="first" type="text"
+                           ng-model="$parent.registration.first"
+                           placeholder="First Name"
+                           required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Last</span>
+                    <input id="last" name="last" type="text"
+                           ng-model="$parent.registration.last"
+                           placeholder="Last Name"
+                           required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input id="email" name="email" type="email"
+                           ng-model="$parent.registration.email"
+                           placeholder="Email"
+                           required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Organization</span>
+                    <input id="organization" name="organization"
+                           type="text"
+                           ng-model="$parent.registration.organization"
+                           placeholder="Organization">
+                </label>
+                <label class="item item-input item-select">
+                    <span class="input-label">Country</span>
+                    <select id="country"
+                            ng-options="c for c in $parent.countries"
+                            ng-model="$parent.registration.country"></select>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input id="password" name="password"
+                           type="password"
+                           ng-model="$parent.password"
+                           ng-minlength="8"
+                           placeholder="Password" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Confirm</span>
+                    <input id="password-confirm" name="password-confirm"
+                           type="password"
+                           ng-model="$parent.passwordConfirm"
+                           ng-minlength="8"
+                           placeholder="Password" required>
+                </label>
+
+                <div class="item item-icon-right assertive" ng-if="passwordMessage.length">
+                    <i class="icon ion-close"></i> {{ passwordMessage }}
+                </div>
+                <div class="item" ng-if="message.length">
+                    {{ message }}
+                </div>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-balanced"
+                        ng-class="{'disabled': !passwordIsValid || !registrationForm.$valid || busy || success}"
+                        ng-click="register()">Register
+                </button>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-stable"
+                        ui-sref="menu.login">Login
+                </button>
+                <button class="button button-block button-stable"
+                        ui-sref="menu.forgot">Forgot
+                </button>
+            </div>
+        </form>
+
+    </ion-content>
+</ion-view>

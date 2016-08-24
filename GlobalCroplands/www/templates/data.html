@@ -1,0 +1,11 @@
+<ion-view title="Data" id="page4" class=" ">
+    <ion-content class="has-header">
+        <ul class="list">
+            <li class="item" ng-repeat="row in rows">
+                <pre>
+                  {{row.json.land_use_type | mappings: 'landUseType'}}
+                </pre>
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>
